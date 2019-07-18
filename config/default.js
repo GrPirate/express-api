@@ -1,5 +1,5 @@
 module.exports = {
-  port: 80,
+  port: 3001,
   hostname: '0.0.0.0',
   origin: ['http://localhost:8080'],
   session: {
