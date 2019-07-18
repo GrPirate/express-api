@@ -10,8 +10,15 @@ const winston = require('winston')
 const expressWinston = require('express-winston')
 const bodyParser = require('body-parser')
 const chalk = require('chalk')
+const cors = require('cors')
 
 const app = express()
+
+app.use(cors({
+  origin: config.origin,
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}))
 
 app.use(bodyParser.urlencoded({ extended: true }))
 

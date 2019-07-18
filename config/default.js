@@ -1,6 +1,7 @@
 module.exports = {
   port: 8081,
   hostname: '0.0.0.0',
+  origin: ['http://localhost:8080'],
   session: {
     secret: 'myapi',
     key: 'myapi',
