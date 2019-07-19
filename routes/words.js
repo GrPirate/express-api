@@ -16,11 +16,13 @@ router.get('/', function (req, res, next) {
 router.post('/update', bodyParser.json(), function (req, res, next) {
   console.log(chalk.green(`req: ${req.body.name}`))
   const name = req.body.name || 'default'
+  const total = req.body.total || 0
+  const params = req.body.params || 0
   // const name = req.params.name
   WordModel.findWord(name)
     .then(re => {
       if (re) {
-        return WordModel.updateWord(name)
+        return WordModel.updateWord(name, total, params)
       } else {
         return WordModel.create({ name })
       }

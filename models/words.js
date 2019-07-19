@@ -26,7 +26,7 @@ module.exports = {
   },
 
   // 更新关键词使用次数
-  updateWord: function (name) {
-    return Word.update({ name }, { $inc: { count: 1 } }).exec()
+  updateWord: function (name, total, params) {
+    return Word.update({ name }, { $inc: { count: 1, total, params } }).exec()
   }
 }
